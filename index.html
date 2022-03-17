@@ -15,41 +15,64 @@
 </head>
 
 <body>
-    <section class="col-sm-2 position-absolute top-0 end-0 p-3 z-index">
-        <button class="btn btn-primary btn-sm mb-4" type="button" data-bs-toggle="collapse"
-            data-bs-target="#collapseForm" aria-expanded="false" aria-controls="collapseForm">
-            Formulario
-        </button>
-        <form class="row g-3 collapse bg-light rounded" id="collapseForm">
-            <div class="form-floating mb-3">
-                <input type="text" class="form-control" id="floatingName" placeholder="Nombre">
-                <label for="floatingName">Nombre</label>
+    <div class="container">
+        <div class="row justify-content-md-center">
+            <div class="col col-lg-2">
+                <form id="searchForm" class="col-sm-2 position-absolute top-0 mx-auto p-3 z-index">
+                    <div class="form-floating search">
+                        <input type="text" name="search" class="form-control" id="floatingSearch"
+                            placeholder="Buscar por coord" required>
+                        <label for="floatingSearch">Buscar por coord.</label>
+                    </div>
+                </form>
             </div>
-            <div class="form-floating">
-                <input type="text" class="form-control" id="floatingAddress" placeholder="Direccion">
-                <label for="floatingAddress">Direccion</label>
+            <div class="col col-lg-2">
+                <section class="col-sm-2 position-absolute top-0 end-0 p-3 z-index">
+                    <button class="btn btn-primary btn-sm mb-4" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseForm" aria-expanded="false" aria-controls="collapseForm">
+                        Formulario
+                    </button>
+                    <form class="row g-3 collapse bg-light rounded formMarker" id="collapseForm">
+                        <div class="form-floating">
+                            <input type="text" name="description" class="form-control" id="floatingName"
+                                placeholder="Nombre" required>
+                            <label for="floatingName">Nombre</label>
+                        </div>
+                        <div class="form-floating">
+                            <input type="text" name="address" class="form-control" id="floatingAddress"
+                                placeholder="Direccion" required>
+                            <label for="floatingAddress">Direccion</label>
+                        </div>
+                        <div class="form-floating">
+                            <input type="text" name="phone" class="form-control" id="floatingPhone"
+                                placeholder="Teléfono">
+                            <label for="floatingPhone">Teléfono</label>
+                        </div>
+                        <div>
+                            <select class="form-select" name="category" aria-label="Categoría" required>
+                                <option value="Comercial" selected>Comercial</option>
+                                <option value="Residencial">Residencial</option>
+                                <option value="Mixta">Mixta</option>
+                            </select>
+                        </div>
+                        <div class="form-floating">
+                            <input type="text" name="coord" class="form-control" id="floatingCoord" placeholder="Coord."
+                                required>
+                            <label for="floatingCoord">Coord.</label>
+                            <small class="text-muted">La coordenada deben estar separadas por una coma</small>
+                        </div>
+                        <div class="">
+                            <button type="submit" class="btn btn-primary btn-sm mb-3">Agregar Marcador</button>
+                            <button type="reset" class="btn btn-danger btn-sm mb-3">Borrar</button>
+                        </div>
+                    </form>
+                    <div id="alertValidation" class="alert alert-danger alert-none" role="alert"></div>
+                </section>
             </div>
-            <div class="form-floating">
-                <input type="text" class="form-control" id="floatingPhone" placeholder="Teléfono">
-                <label for="floatingPhone">Teléfono</label>
-            </div>
-            <div>
-                <select class="form-select" aria-label="Categoría">
-                    <option value="Comercial" selected>Comercial</option>
-                    <option value="Residencial">Residencial</option>
-                    <option value="Mixta">Mixta</option>
-                </select>
-            </div>
-            <div class="form-floating">
-                <input type="text" class="form-control" id="floatingCoord" placeholder="Coord.">
-                <label for="floatingCoord">Coord.</label>
-            </div>
-            <div class="">
-                <button type="submit" class="btn btn-primary btn-sm mb-3">Agregar Marcador</button>
-                <button type="submit" class="btn btn-danger btn-sm mb-3">Borrar</button>
-            </div>
-        </form>
-    </section>
+        </div>
+
+
+    </div>
 
     <section id="mapid">
     </section>
