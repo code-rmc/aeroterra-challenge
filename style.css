@@ -6,6 +6,9 @@
 .alert-none {
   display: none;
 }
+.removeButton {
+  display: none;
+}
 .z-index {
   z-index: 1000;
 }
